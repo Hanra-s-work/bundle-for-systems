@@ -1,4 +1,4 @@
-name: release
+name: linux_appimage_builder
 
 on:
   push:

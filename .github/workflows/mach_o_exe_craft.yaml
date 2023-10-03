@@ -1,4 +1,4 @@
-name: release
+name: mach_o_exe_craft
 
 on:
   push:

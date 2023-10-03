@@ -1,4 +1,4 @@
-name: release
+name: win_exe_builder
 
 on:
   push:
