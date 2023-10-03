@@ -15,16 +15,49 @@ jobs:
 
     steps:
       - name: Trigger Build Workflow
-        uses: actions/trigger-workflow@v1
+        uses: julianiag/workflow-trigger@v0.1.10
         with:
-          workflow: build.yml
+          # GitHub App ID
+          appId: ${{ secrets.APP_ID }}
+          # Private key associated with the GitHub App
+          privateKey: ${{ secrets.APP_PRIVATE_KEY }}
+          # GitHub App installation ID
+          installationId: ${{ secrets.APP_INSTALLATION_ID }}
+          # Owner of the repo (org name or account name)
+          owner: your_owner_name
+          # Name of the repository containing the workflow
+          repo: your_repository_name
+          # ID or name of the workflow to trigger
+          workflowId: build.yml
 
       - name: Trigger Test Workflow
-        uses: actions/trigger-workflow@v1
+        uses: julianiag/workflow-trigger@v0.1.10
         with:
-          workflow: test.yml
+          # GitHub App ID
+          appId: ${{ secrets.APP_ID }}
+          # Private key associated with the GitHub App
+          privateKey: ${{ secrets.APP_PRIVATE_KEY }}
+          # GitHub App installation ID
+          installationId: ${{ secrets.APP_INSTALLATION_ID }}
+          # Owner of the repo (org name or account name)
+          owner: your_owner_name
+          # Name of the repository containing the workflow
+          repo: your_repository_name
+          # ID or name of the workflow to trigger
+          workflowId: test.yml
 
       - name: Trigger Release Workflow
-        uses: actions/trigger-workflow@v1
+        uses: julianiag/workflow-trigger@v0.1.10
         with:
-          workflow: release.yml
+          # GitHub App ID
+          appId: ${{ secrets.APP_ID }}
+          # Private key associated with the GitHub App
+          privateKey: ${{ secrets.APP_PRIVATE_KEY }}
+          # GitHub App installation ID
+          installationId: ${{ secrets.APP_INSTALLATION_ID }}
+          # Owner of the repo (org name or account name)
+          owner: your_owner_name
+          # Name of the repository containing the workflow
+          repo: your_repository_name
+          # ID or name of the workflow to trigger
+          workflowId: release.yml
