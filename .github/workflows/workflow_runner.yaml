@@ -1,0 +1,30 @@
+name: workflow_runner
+
+on:
+  push:
+    tags:
+    - 'v*'
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Build Workflow
+        uses: actions/trigger-workflow@v1
+        with:
+          workflow: build.yml
+
+      - name: Trigger Test Workflow
+        uses: actions/trigger-workflow@v1
+        with:
+          workflow: test.yml
+
+      - name: Trigger Release Workflow
+        uses: actions/trigger-workflow@v1
+        with:
+          workflow: release.yml

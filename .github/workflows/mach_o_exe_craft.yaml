@@ -1,0 +1,20 @@
+name: release
+
+on:
+  push:
+    tags:
+    - 'v*'
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Will fail
+          run: |
+            echo "release"
+            exit 84
